@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_remove.png",
+        "source": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\drawable-hdpi\\ic_action_remove.png"
+    },
+    {
+        "merged": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\icon.png",
+        "source": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\drawable-hdpi\\icon.png"
+    },
+    {
+        "merged": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_next_item.png",
+        "source": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\drawable-hdpi\\ic_action_next_item.png"
+    },
+    {
+        "merged": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\ic_action_previous_item.png",
+        "source": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\drawable-hdpi\\ic_action_previous_item.png"
+    }
+]

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DengueZero - Mapa</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+	<script type="text/javascript"src="js/zdengue.jquery-2.0.3.min.js"></script>			    
+	<script src="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js"></script>	
+	<script src="http://app.denguezero.com.br/markercluster/inspections/realworld.php"></script>
+	<script type="text/javascript" charset="utf-8" src="js/zdengue.markercluster.js"></script>
+	<link rel="stylesheet" href="css/markercluster.css" />	       
+    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css" />    	
+    <style>
+		body {
+			padding: 0;
+			margin: 0;
+		}
+		html, body, #map {
+			height: 100%;
+		}						
+	</style>  
+  </head>
+  <body>  	  	
+	<div id="map"></div>
+	<script>
+		var tiles = L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiZGFuaWVsdHJpYm9uaSIsImEiOiJjaWd1dml0MWYwY3BvNjVtMDVtazFweDdnIn0.F6VDgJkp8vUwGVt134t4Qw', {
+			maxZoom: 18,
+			attribution: 'DengueZero&reg; Cidad&atilde;o',
+			id: 'mapbox.streets'
+		}), latlng = L.latLng(0,0);
+
+		var map = L.map('map', {center: latlng, zoom: 14, layers: [tiles]});
+		map.locate({setView: true, maxZoom: 14});
+
+		var LeafIcon = L.Icon.extend({
+			options: {
+				shadowUrl:    'css/images/marker-shadow.png',
+				iconSize:     [25, 41],
+				shadowSize:   [41, 41],
+				iconAnchor:   [25, 41],
+				shadowAnchor: [25, 40],
+				popupAnchor:  [-12, -50]
+			}
+		});
+
+		var blueIcon = new LeafIcon({iconUrl: 'css/images/marker-icon.png'}),
+			redIcon = new LeafIcon({iconUrl: 'css/images/marker-icon-red.png'}),
+			greenIcon = new LeafIcon({iconUrl: 'css/images/marker-icon-green.png'});
+
+		function onLocationFound(e) {
+			$('.leaflet-bar').append('<a class="leaflet-control-zoom-out" href="main.html" title="Voltar">&lt;</a>');
+			var radius = e.accuracy / 2;
+			var markers = L.markerClusterGroup();
+			L.marker(e.latlng).addTo(map);
+			L.circle(e.latlng, radius).addTo(map);
+			for (var i = 0; i < addressPoints.length; i++) {
+				var a = addressPoints[i];
+				var title = a[2];
+				var marker = L.marker(new L.LatLng(a[0], a[1]), {icon: eval(a[3])}).bindPopup(title).addTo(map);
+				markers.addLayer(marker);
+			}
+			map.addLayer(markers);
+			map.on('popupopen', function(e) {
+			    var px = map.project(e.popup._latlng);
+			    px.y -= e.popup._container.clientHeight/2
+			    map.panTo(map.unproject(px),{animate: true});
+			});
+			navigator.notification.activityStop();
+		}
+
+		function onLocationError(e) {
+			alert(e.message);
+			navigator.notification.activityStop();
+		}
+
+		map.on('locationfound', onLocationFound);
+		map.on('locationerror', onLocationError);
+	</script>
+  </body>
+</html>

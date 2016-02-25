@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>DengueZeroCidadao</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script type="text/javascript" src="js/zdengue.jquery-2.0.3.min.js"></script>
+		<script type="text/javascript" src="js/zdengue.jquery.mobile-1.3.2.min.js"></script>
+		<link rel="stylesheet" href="css/jquery-mobile.css">
+	</head>
+	<body>
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="loginPage" data-title="DengueZero Cidadao - LOGIN">
+	   	<div data-role="content" class="jqm-content">	   	
+			<form name="form-login" id="form-login" method="post" onsubmit="return false" class="div-hide">
+		   		 <div align="center"><img id="imgLogo" src="css/images/icone_pt.png" width="180"></div>
+				 <label for="text-email">E-Mail:</label>
+				 <input type="email" name="text-email" id="text-email">
+				 <label for="text-senha" id="lblSenha">Senha:</label>
+				 <input type="password" name="text-senha" id="text-senha">
+				 <br clear="all">
+				 <button id="btnFB" class="btn btn-block" style="background-color:#3b5999; color: #fff;text-shadow:none;">
+					<img src="css/images/login_with_facebook.png" height="30" style="margin-top:-3px; float: left; position:absolute; margin-left: -78px;" alt="" />
+					<div id="btnFBLabel" style="margin-left:45px;">Entrar com Facebook</div></button>
+				 <a href="#" data-role="button" id="btnSignIn" data-theme="b">ENTRAR</a>
+				 <a href="#" data-role="button" id="btnSignUp" data-theme="a">NOVO CADASTRO</a>
+				 <br clear="all">
+			</form>
+		</div>
+	</div>
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="timelinePage" data-title="DengueZero Cidadao - TIMELINE">
+		<div data-role="header" data-theme="b" data-position="fixed" style="z-index:10050">
+			<h1><img id="imgHeaderFeed" src="css/images/denguezerocidadao_header_pt.png" height="50"></h1>
+		</div>
+		<div data-role="content" class="jscroll">
+			<div class="next"><a href="http://app.denguezero.com.br/timeline"></a></div>
+		</div>
+	</div>
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="languagePage" data-title="DengueZero Cidadao - LANGUAGE">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1><img src="css/images/denguezerocidadao_header_pt.png" height="50"></h1>
+		</div>
+		<div data-role="content">
+			<a href="#" data-role="button" id="btnPortugues" data-theme="b">PORTUGU&Ecirc;S</a>
+			<a href="#" data-role="button" id="btnEnglish" data-theme="b">ENGLISH</a>
+			<a href="#" data-role="button" id="btnEspanol" data-theme="b">ESPA&Ntilde;OL</a>
+			<div id="videoArea"></div>
+		</div>
+	</div>
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="indexPage" data-title="DengueZero Cidadao - INDEX">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1><img id="imgHeaderIndex" src="css/images/denguezerocidadao_header_pt.png" height="50"></h1>
+		</div>
+		<div data-role="content" class="jqm-content">
+			<div id="divCenter" class="centerDiv">
+				<div id="divDengueZero" style="float:left">
+					<img src="css/images/zerodengue.png" width="130" alt="" />
+				</div>
+				<div id="divItems">
+					<div class="ecomercial"><img src="css/images/ecomercial.png" height="32" /></div>
+					<div class="wrapper" style="margin-left: 170px;">
+						<img id="userPic" src="css/images/482.GIF" height="100" alt="" />
+					</div>
+					<div class="textDengue">DengueZero</div>
+					<div id="userName" class="textUser"></div>
+				</div>
+				<!--span class="together" id="lblJuntos"></span-->
+			</div>
+			<a href="#" id="btnNewReport" data-role="button" data-theme="b">NOVA DEN&Uacute;NCIA</a>
+			<a href="#" id="btnMyReports" data-role="button" data-theme="a">MINHAS DEN&Uacute;NCIAS</a>
+			<a href="#" id="btnFeedReports" data-role="button" data-theme="a">FEED DE DENUNCIAS</a>
+			<a href="javascript:index.fMap();location.href='mapa.html'" id="btnMap" data-role="button" data-theme="a">VER MAPA DA DENGUE</a>
+			<a href="#" id="btnMyRegister" data-role="button" data-theme="a">MEU CADASTRO</a>
+			<a href="#" id="btnExit" data-role="button" data-theme="a">SAIR</a>
+		</div>
+	</div>
+
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="newreportPage" data-title="DengueZero Cidadao - DENUNCIA">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1><img id="imgHeaderDenuncia" src="css/images/denguezerocidadao_header_pt.png" height="50"></h1>
+		</div>
+		<form name="form-amostra" id="form-amostra" method="post" onsubmit="return false">
+			<div data-role="content">
+				<h1><img src="css/images/amostra.png" height="32" style="margin-bottom: -3px; margin-right:10px;"><span id="lblDenuncia">NOVA DEN&Uacute;NCIA</span></h1>
+				<p id="textDenuncia">Ao iniciar uma den&uacute;ncia de um poss&iacute;vel
+									 foco detectado, informe o endere&ccedil;o completo,
+									 o tipo espec&iacute;fico e as caracter&iacute;sticas detectadas do foco:
+				</p>
+				<label for="text-endereco" id="lblEndereco">Endere&ccedil;o da Denuncia:</label>
+				<input type="text" maxlength="60" name="text-endereco" id="text-endereco">
+				<input type="hidden" name="checkbox-anonimo" id="checkbox-anonimo1" value="anonimo">
+				<label for="select-tp-amostra" id="lblAmostra">Tipo da Amostra:</label>
+				<select name="select-tp-amostra" id="select-tp-amostra" onchange="javascript:common.fOpenOtherSamples();" class="required" >
+					<option value="">SELECIONE</option>
+					<optgroup label="3 - OBJETOS M&Oacute;VEIS">
+						<option value="3A">3A - BALDE</option>
+						<option value="3B">3B - BANDEJA</option>
+						<option value="3C">3C - CONSUMO ANIMAL</option>
+						<option value="3D">3D - FRASCO</option>
+						<option value="3E">3E - GARRAFA</option>
+						<option value="3F">3F - LATA</option>
+						<option value="3G">3G - LIXO ACUMULADO</option>
+						<option value="3H">3H - PINGADEIRA</option>
+						<option value="3I">3I - PNEU</option>
+						<option value="3J">3J - POTE</option>
+						<option value="3K">3K - PISCINA</option>
+						<option value="3L">3L - PRATO</option>
+						<option value="3M">3M - TAMPA</option>
+						<option value="3N">3N - VASO DE PLANTA</option>
+						<option value="3O">3O - OUTROS</option>
+					</optgroup>
+					<optgroup label="4 - OBJETOS IM&Oacute;VEIS">
+						<option value="4A">4A - CAIXA DESCARGA</option>
+						<option value="4B">4B - CALHA</option>
+						<option value="4C">4C - LAJE</option>
+						<option value="4D">4D - PISCINA</option>
+						<option value="4E">4E - RALO</option>
+						<option value="4F">4F - VASO SANIT&Aacute;RIO</option>
+						<option value="4G">4G - OUTROS</option>
+					</optgroup>
+					<optgroup label="5 - NATUREZA">
+						<option value="5A">5A - VEGETA&Ccedil;&Atilde;O</option>
+						<option value="5B">5B - OUTROS</option>
+					</optgroup>
+				</select>
+				<div id="divOutrosTipos" class="div-hide">
+					<label for="text-tipo-outros" id="lblOutrosTipos">Informe Outros Tipos:</label>
+					<textarea maxlength="50" cols="40" rows="6" name="text-tipo-outros" id="text-tipo-outros"></textarea>
+				</div>
+				<label for="lblCaracteristicas" id="lblCaracteristicas">Caracter&iacute;sticas:</label>
+				<div data-role="controlgroup">
+					<input type="checkbox" name="checkbox-am-clarvas" id="checkbox-am-clarvas" value="1">
+					<label for="checkbox-am-clarvas" id="lblLarvas">Amostra Cont&eacute;m Larvas</label>
+					<input type="checkbox" name="checkbox-am-cvetor" id="checkbox-am-cvetor" value="1">
+					<label for="checkbox-am-cvetor" id="lblVetor">Amostra Cont&eacute;m Vetor</label>
+					<input type="checkbox" name="checkbox-am-cagua" id="checkbox-am-cagua" value="1">
+					<label for="checkbox-am-cagua" id="lblAgua">Amostra Cont&eacute;m &Aacute;gua</label>
+				</div>
+				<div id="divObs">
+					<label for="text-obs-amostra">OBS:</label>
+					<textarea maxlength="100" cols="40" rows="6" name="text-obs-amostra" id="text-obs-amostra"></textarea>
+				</div>
+				<br clear="all">
+				<div data-demo-html="true">
+					<a href="#" id="btnPhoto" data-role="button" data-theme="a">COLETAR FOTO</a>
+					<div id="divFoto" class="div-hide">
+						<label for="smallImage" id="lblPhoto">Foto Coletada:</label>
+						<img id="smallImage" style="width:100%;height:190px;" src="" />
+						<a href="#" id="btnRemPhoto" data-role="button" data-theme="a">REMOVER FOTO</a>
+						<br clear="all">
+					</div>
+					<a href="#" id="btnRemMyVideo" style="display:none" data-role="button" data-theme="a">REMOVER MIDIA</a>
+					<a href="#" id="btnSend" data-role="button" data-theme="b">ENVIAR DEN&Uacute;NCIA</a>
+					<a href="main.html" data-ajax="false" id="btnBackDenuncia" data-role="button" data-theme="a">VOLTAR</a>
+				</div>
+			</div>
+		</form>
+	</div>
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="myregisterPage" data-title="DengueZero Cidadao CADASTRO">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1><img id="imgHeaderCadastro" src="css/images/denguezerocidadao_header_pt.png" height="50"></h1>
+		</div>
+		<form name="form-cadastro" id="form-cadastro" method="post" onsubmit="return false">
+			<div data-role="content">
+				<h1><img src="css/images/index.png" height="32" style="margin-bottom: -3px; margin-right:10px;"><span id="lblCadastro">CADASTRO</span></h1>
+				<p id="textCadastro">Informe seu Nome, E-Mail e a sua Senha para cadastro no Portal DengueZero:</p>
+				<br clear="all">
+				<label for="text-nome" id="lblNome">Nome Completo:</label>
+				<input type="text" maxlength="60" name="text-nome" id="text-nome">
+				<label for="text-apelido" id="lblApelido">Apelido:</label>
+				<input type="text" maxlength="30" name="text-apelido" id="text-apelido">
+				<label for="text-email2">E-Mail:</label>
+				<input type="email" maxlength="60" name="text-email2" id="text-email2">
+				<label for="text-senha2" id="lblSenha2">Senha:</label>
+				<input type="password" maxlength="60" name="text-senha2" id="text-senha2">
+				<label for="text-csenha" id="lblCSenha">Confirme a Senha:</label>
+				<input type="password" maxlength="60" name="text-csenha" id="text-csenha">
+				<br clear="all">
+				<div data-demo-html="true">
+					<a href="#" id="btnMyPhoto" data-role="button" data-theme="a">MINHA FOTO</a>
+					<div id="divFoto2" class="div-hide">
+						<label for="smallImage2"></label>
+						<img id="smallImage2" style="width:100%;height:190px;" src="" />
+						<a href="#" id="btnRemMyPhoto" data-role="button" data-theme="a">REMOVER FOTO</a>
+						<br clear="all">
+					</div>
+				</div>
+				<a href="#" data-role="button" id="btnSave" data-theme="b">SALVAR</a>
+				<a href="#" data-role="button" id="btnLogout" data-theme="a">FAZER LOGOUT</a>
+				<button id="btnLogoutFB" class="btn btn-block" style="background-color:#3b5999; color: #fff;text-shadow:none;">
+				Sair do Facebook</button>
+				<a href="main.html" id="btnBackCadastro" data-ajax="false" data-role="button" data-theme="a">VOLTAR</a>
+			</div>
+		</form>
+	</div>
+
+	<div data-role="page" class="jqm-demos ui-responsive-panel" id="myreportsPage" data-title="DengueZero Cidadao - MINHASDENUNCIAS">
+		<div data-role="header" data-theme="b" data-position="fixed">
+			<h1><img id="imgHeaderMinhasDenuncias" src="css/images/denguezerocidadao_header_pt.png" height="50"></h1>
+		</div>
+		<div data-role="content">
+			<h1><img src="css/images/amostra.png" height="32" style="margin-bottom: -3px; margin-right:10px;"><span id="lblMinhasDenuncias">MINHAS DEN&Uacute;NCIAS</span></h1>
+			<label for="table-amostra-pendentes" id="lblTableAmostraPendentes">Denuncias Pendentes</label>
+			<table data-role="table" id="table-amostra-pendentes" data-mode="columntoggle" data-column-btn-theme="b" data-column-btn-text="..." data-column-popup-theme="a" class="movie-list ui-shadow table-stripe ui-responsive">
+				<tbody id="tbPendentes">
+				<tr>
+					<td>Nenhuma den&uacute;ncia encontrada!</td>
+				</tr>
+				</tbody>
+			</table>
+			<br clear="all">
+			<label for="table-amostra-enviadas" id="lblTableAmostraEnviadas">Denuncias Enviadas</label>
+			<table data-role="table" id="table-amostra-enviadas" data-mode="columntoggle" data-column-btn-theme="b" data-column-btn-text="..." data-column-popup-theme="a" class="movie-list ui-shadow table-stripe ui-responsive">
+				<tbody id="tbEnviadas">
+				<tr>
+					<td>Nenhuma den&uacute;ncia encontrada!</td>
+				</tr>
+				</tbody>
+			</table>
+			<br clear="all">
+			<a href="#" id="btnNewReportList" data-ajax="false" data-role="button" data-theme="b">NOVA DEN&Uacute;NCIA</a>
+			<a href="main.html" id="btnBackMinhasDenuncias" data-ajax="false" data-role="button" data-theme="a">VOLTAR</a>
+		</div>
+	</div>
+	<script type="text/javascript" src="cordova.js"></script>
+	<script type="text/javascript" src="js/zdengue.facebook.js"></script>
+	<script type="text/javascript" src="js/zdengue.common.js"></script>
+	<script type="text/javascript" src="js/zdengue.googlegeocode.js"></script>
+	<script type="text/javascript" src="js/zdengue.login.js"></script>
+	<script type="text/javascript" src="js/zdengue.index.js"></script>
+	<script type="text/javascript" src="js/zdengue.cadastro.js"></script>
+	<script type="text/javascript" src="js/zdengue.idioma.js"></script>
+	<script type="text/javascript" src="js/zdengue.foto.js"></script>
+	<script type="text/javascript" src="js/zdengue.denuncia.js"></script>
+	<script type="text/javascript" src="js/zdengue.infinity.js"></script>
+	<div class="ui-loader-background"> </div>
+</body>
+</html>

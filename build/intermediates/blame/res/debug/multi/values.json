@@ -1,0 +1,43 @@
+[
+    {
+        "outputFile": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\build\\intermediates\\res\\merged\\debug\\values\\values.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 63,
+                    "endOffset": 114
+                },
+                "from": {
+                    "file": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 119,
+                    "endColumn": 55,
+                    "endOffset": 170
+                },
+                "from": {
+                    "file": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\values\\strings.xml"
+                }
+            },
+            {
+                "to": {
+                    "startLine": 4,
+                    "startColumn": 4,
+                    "startOffset": 175,
+                    "endColumn": 58,
+                    "endOffset": 229
+                },
+                "from": {
+                    "file": "C:\\Users\\Acer\\.cordova\\lib\\npm_cache\\cordova-android\\4.1.1\\package\\bin\\DengueZeroCidadao\\res\\values\\strings.xml"
+                }
+            }
+        ]
+    }
+]
