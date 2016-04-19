@@ -1,4 +1,4 @@
-var urlDengueZero = "http://app.denguezero.com.br/request";
+var urlDengueZero = "[API_DENGUEZERO_URL]";
 var edit = false;
 var internetConnection;
 var common = {
