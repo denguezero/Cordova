@@ -15,7 +15,7 @@ var facebook = {
             console.log('INFOAPP: Load Facebook OK');
             document.addEventListener("deviceready", function () { runningInCordova = true; }, false);
             btnFB.addEventListener('click', this.fLogin, false);
-            fbAppId = 421039164758367;
+            fbAppId = [FACEBOOK_TOKEN];
     },
     login:function(callback, options) {
         var loginWindow,
